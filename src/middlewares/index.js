@@ -12,15 +12,15 @@ export const featuring = (store) => (next) => (actionInfo) => {
     next(updateActionInfo)
 }
 
-export const prefix = store => next => action => {
-    const prefixed = action.action.payload.map( pokemon => ({
-        ...pokemon,
-        name: 'Poke: ' + pokemon.name
-    }) )
+// export const prefix = store => next => action => {
+//     const prefixed = action.action.payload.map( pokemon => ({
+//         ...pokemon,
+//         name: 'Poke: ' + pokemon.name
+//     }) )
 
-    const updatedAction = {
-        ...action,
-        action: {...action.action, payload: prefixed}
-    }
-    next(updatedAction);
-}
+//     const updatedAction = {
+//         ...action,
+//         action: {...action.action, payload: prefixed}
+//     }
+//     next(updatedAction);
+// }

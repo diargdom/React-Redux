@@ -1,12 +1,12 @@
+import { useEffect } from "react";
+import { Col, Spin } from "antd";
+import { useDispatch, useSelector } from "react-redux";
 import Searcher from "./components/Searcher";
 import PokemonList from "./components/PokemonList";
-import { Col, Spin } from "antd";
-import { useEffect } from "react";
 import { getPokemon } from "./api";
 import { getPokemonsWithDetails, setLoading } from "./actions";
 import logo from "./statics/logo.svg";
 import "./App.css";
-import { useDispatch, useSelector } from "react-redux";
 
 function App() {
   const pokemons = useSelector((state) => state.pokemons);
@@ -14,15 +14,15 @@ function App() {
   const dispacth = useDispatch();
 
   useEffect(() => {
-    const fetchPokemon = async () => {
+    const fetchPokemons = async () => {
       dispacth(setLoading(true))
       const pokemonsRes = await getPokemon();
       dispacth(getPokemonsWithDetails(pokemonsRes));
       dispacth(setLoading(false))
     };
 
-    fetchPokemon();
-  });
+    fetchPokemons();
+  }, []);
 
   return (
     <div className="App">
