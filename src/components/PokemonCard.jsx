@@ -2,8 +2,10 @@ import { Card } from "antd";
 import Meta from 'antd/lib/card/Meta';
 import StartButton from "./StarButton";
 import { useDispatch } from "react-redux";
+import { setFavorite } from "../slices/dataSlice";
 import "./PokemonList.css";
-import { setFavorite } from "../actions";
+
+
 
 
 
