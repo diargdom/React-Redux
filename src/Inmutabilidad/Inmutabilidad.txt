@@ -1,0 +1,18 @@
+Algo que no puede ser cambiado después de su creación.
+Es decir una vez se creo con un valor, este valor no puede ser mutado.
+
+¿Por qué es importante?
+Redux no indicará a la UI que debe
+renderizar nuevamente, si su estado inicial
+y el estado retornado son exactamente
+iguales.
+
+¿Cómo trabajar la inmutabilidad en JavaScript?
+Inmutabilidad con JS:
+● Object.assign
+● Spread operator
+
+Desventajas
+● Generación constante de objetos.
+● Propenso a errores humanos.
+● Menos trazabilidad.
